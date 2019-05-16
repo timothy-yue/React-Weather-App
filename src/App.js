@@ -1,26 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import Weather from './components/weather-wrapper/weather';
+
+class App extends Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			location: {
+				lat: '',
+				long: ''
+			},
+			locationAval: false
+		};
+	}
+
+	render() {
+		return (
+			<React.Fragment>
+				<div className="App">
+					<Weather location={this.state.location} />
+				</div>
+			</React.Fragment>
+		);
+	}
 }
 
 export default App;

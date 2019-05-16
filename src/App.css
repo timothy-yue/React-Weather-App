@@ -1,33 +1,163 @@
+html {
+	width: 100%;
+	height: 100%;
+}
+
+body {
+	width: 100%;
+	height: 100%;
+	background-image: url('./assets/images/night.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+
+#root {
+	width: 100%;
+	height: 100%;
+}
+
 .App {
-  text-align: center;
+	width: 100%;
+	height: 100%;
 }
 
 .App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+	animation: App-logo-spin infinite 20s linear;
+	height: 40vmin;
+	pointer-events: none;
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+	background-color: #282c34;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	font-size: calc(10px + 2vmin);
+	color: white;
 }
 
 .App-link {
-  color: #61dafb;
+	color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.container {
+	width: 90%;
+	margin: auto;
+}
+
+.weatherCard-wrapper {
+	/* display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	grid-template-rows: repeat(350px); */
+	display: flex;
+	flex-direction: row;
+	overflow: scroll;
+}
+
+/* @media screen and (max-width: 750px) {
+	.weatherCard-wrapper {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		grid-template-rows: 300px;
+	}
+} */
+
+.no-margin {
+	margin: 0 0 7px 0;
+	text-decoration: underline;
+}
+
+.weather-card {
+	padding: 12px;
+	border: 2px solid lightgrey;
+	margin: 0 10px;
+	box-shadow: 1px 1px darkgrey;
+	border-radius: 10px;
+}
+
+.weather-card-wrapper {
+	padding: 20px;
+}
+
+.card-body {
+	display: flex;
+	flex-direction: column;
+	text-align: left;
+	color: white;
+}
+
+.card-body p {
+	font-size: 0.75rem;
+	margin: 0 0 4px 0;
+	color: white;
+}
+
+.card-header {
+	overflow: hidden;
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+		transform: translateY(100%);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.card-header svg {
+	animation-name: fadeIn;
+	animation-duration: 2s;
+	animation-iteration-count: 1;
+}
+
+.summary-container {
+	margin-top: 40px;
+}
+
+.summary-card {
+	width: 60%;
+	margin: auto;
+}
+
+.summary-card-wrapper {
+	padding: 35px;
+}
+
+@keyframes summaryFade {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+.content {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+
+	border: 2px solid lightgrey;
+	background-color: #f7f7f7;
+	border-radius: 20px;
+	opacity: 0;
+	transition: opacity 1s;
+}
+
+.content:hover {
+	animation: summaryFade 1s;
+	animation-iteration-count: 1;
+
+	opacity: 1;
+}
+
+.summary-card-body {
+	color: orange;
 }
