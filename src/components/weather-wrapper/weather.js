@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import WeatherCard from './weatherCard';
 
-import { API_URL } from '../../config';
-import { TEST_DATA } from '../../test';
+// import { API_URL } from '../../config';
+import { TEST_DATA } from '../../fallback';
 
 import { NavHeader, MobileNavHeader } from '../navHeader';
-import SummaryCard from '../summaryCard';
 import Loading from '../loading';
+
+import FlipCard from '../FlipCard';
 
 export default class Weather extends Component {
 	constructor(props) {
@@ -17,6 +18,7 @@ export default class Weather extends Component {
 				long: ''
 			},
 			locationAval: false,
+			useFallBackData: false,
 			daily: [],
 			width: 0,
 			height: 0
@@ -39,7 +41,7 @@ export default class Weather extends Component {
 				});
 			});
 		} else {
-			console.log('GeoLocation not supported');
+			console.log('GeoLocation not supported / provided');
 		}
 		this.setState({
 			daily: TEST_DATA.daily
@@ -70,9 +72,10 @@ export default class Weather extends Component {
 					<Loading />
 				)}
 				{this.state.height > 810 && this.state.locationAval ? (
-					<div className="summary-container">
-						<SummaryCard summary={this.state.daily} />
-					</div>
+					// <div className="summary-container">
+					// 	<SummaryCard summary={this.state.daily} />
+					// </div>
+					<FlipCard summary={this.state.daily} />
 				) : (
 					''
 				)}

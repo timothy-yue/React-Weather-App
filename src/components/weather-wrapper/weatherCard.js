@@ -12,8 +12,6 @@ import {
 	WiNightClear
 } from 'weather-icons-react';
 
-import styled, { keyframes } from 'styled-components';
-
 export default function WeatherCard(props) {
 	const iconCollection = {
 		rain: <WiDayRain size={200} color="#abf" />,

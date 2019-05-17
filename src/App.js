@@ -20,6 +20,7 @@ class App extends Component {
 			<React.Fragment>
 				<div className="App">
 					<Weather location={this.state.location} />
+					<div className="hover-here">Hover Here</div>
 				</div>
 			</React.Fragment>
 		);
